@@ -81,7 +81,9 @@ export const Login=async(req,res) =>{
 export const allstudents =async(req,res)=>{
      var data=await User.find({designation:"student", branch:req.params.branch});
 
-     if(req.params.branch==='All') data=await User.find({designation:"student"});
+     console.log("=======>",req.params.branch)
+
+     if(req.params.branch==='ALL') data=await User.find({designation:"student"});
      if(!data) res.status(404).json({message: 'there is no students '});
      try{
        return res.status(200).json(data);
