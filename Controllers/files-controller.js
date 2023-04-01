@@ -28,3 +28,18 @@ export const getallfiles =async(req,res)=>{
        return res.status(400).json({message:error.message})
     }
 }
+
+export const DeleteFile = async(req,res)=>{
+    console.log("welcome");
+    try{
+        const file=await Files.findById(req.params.id);
+        console.log(file);
+        if(!file) return res.status(404).json({message:"file not exit"});
+ 
+        file.delete();
+        return res.status(200).json({message:"file deleted successfully"})
+     }
+     catch(error){
+        return res.status(404).json({message:error.message});
+     }
+}

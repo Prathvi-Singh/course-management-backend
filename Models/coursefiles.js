@@ -20,6 +20,12 @@ const filesSchema = mongoose.Schema({
     },
     course:{
         type:String,
+    },
+    image_name:{
+        type:String,
+    },
+    title:{
+        type:String,
     }
 
 
