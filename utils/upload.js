@@ -10,7 +10,7 @@ const storage =new GridFsStorage({
     options : {useNewUrlParser : true},
     file : (request,file) => {
       
-        const match = ['image/png','image/jpeg','image/pdf'];
+        const match = ['image/png','image/jpeg','image/pdf','image/jpg','image/gif','image/avif'];
        
         if(match.indexOf(file.memeType)===-1){
            
