@@ -6,7 +6,7 @@ export const files=async(req,res)=>{
     try{
         const newFile=new Files(data);
         await newFile.save();
-
+        console.log(data);
         return res.status(200).json(data);
 
     } 
