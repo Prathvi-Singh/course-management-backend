@@ -3,10 +3,11 @@ import {AddUser,Login,allstudents,AllFaculty} from '../Controllers/user-controll
 import {AddCourse ,GetCourses,SendCourseInDetail,Update,DeleteCourse} from '../Controllers/Course-controller.js'
 import {authenticateToken} from '../Controllers/jwt-controller.js'
 import {uploadImage,getImage} from '../Controllers/image-controller.js'
-import {files,getallfiles,DeleteFile} from '../Controllers/files-controller.js'
+import {files,getallfiles,DeleteFile,getallSubmissions} from '../Controllers/files-controller.js'
 import {AddGrade,allgrades} from '../Controllers/grade-controller.js'
 import upload from '../utils/upload.js'
 import {tokend} from '../Controllers/rough.js'
+
 const router=express();
 
 // router.post('/register',Signup);
@@ -27,6 +28,7 @@ router.get('/allgrades:email',allgrades);
 router.delete('/delete',tokend);
 router.get('/allfaculty',AllFaculty)
 router.delete('/fileDelete:id',DeleteFile)
+router.get('/submission:id',getallSubmissions)
 
 //router.get('/course/:branch',BranchByCourse)
 

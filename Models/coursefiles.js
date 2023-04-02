@@ -16,7 +16,6 @@ const filesSchema = mongoose.Schema({
     },
     description:{
         type:String,
-       
     },
     course:{
         type:String,
@@ -25,6 +24,9 @@ const filesSchema = mongoose.Schema({
         type:String,
     },
     title:{
+        type:String,
+    },
+    id:{
         type:String,
     }
 
