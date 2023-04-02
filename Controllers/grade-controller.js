@@ -24,6 +24,7 @@ export const AddGrade =async(req,res) => {
 export const allgrades = async(req,res)=>{
      const data=await Grade.find({email:req.params.email});
      if(!data) return  res.status(404).json({message:"there is no data"});
+     console.log(data);
      try{
         return res.status(200).json(data);
      }

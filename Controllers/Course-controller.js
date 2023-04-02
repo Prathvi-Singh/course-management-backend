@@ -1,10 +1,17 @@
 import mongoose from 'mongoose';
 import Course from '../Models/course.js'
+import User from '../Models/user.js';
 
 export const AddCourse=async(req,res)=>{
     const course=req.body;
     console.log(course);
-    if(!course) return res.status(400).json({message:"Please fill all field"});
+    if(!course) return res.status(403).json({message:"Please fill all field"});
+    const email=req.body.facultyemail;
+    const user=await User.findOne({email:email});
+    console.log("user-->",user)
+    if(!user){
+      return res.status(401).json({message:"there is an error "});
+    }
     try{
         const newcourse =new Course(req.body);
         await newcourse.save();
@@ -14,7 +21,7 @@ export const AddCourse=async(req,res)=>{
         return res.status(200).json(all);
     }
     catch(err){
-        res.status(403).json({message:"there is an error "});
+        res.status(402).json({message:"there is an error "});
     }
 }
 
