@@ -20,9 +20,11 @@ export const files=async(req,res)=>{
 
 
 export const getallfiles =async(req,res)=>{
-    console.log("hello");
-    console.log(req.params.course)
-    const data=await Files.find({course:req.params.course});
+    let course =req.query.course;
+    let email=req.query.email
+    console.log(course ,"------", email);
+    const data=await Files.find({course : course , email:email});
+    console.log(data);
     if(!data) return res.status(404).json({message:"Info about about course"});
     try{
         return res.status(200).json(data);

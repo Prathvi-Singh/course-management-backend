@@ -21,7 +21,7 @@ router.post('/adduser',AddUser)
 router.post('/file/upload',upload.single('file'),uploadImage);
 router.get('/file/:filename',getImage);
 router.post('/files',files);
-router.get('/allfiles:course',getallfiles);
+router.get('/allfiles',getallfiles);
 router.post('/submitgrades',AddGrade);
 router.get('/allstudents:branch',allstudents);
 router.get('/allgrades:email',allgrades);
