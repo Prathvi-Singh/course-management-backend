@@ -4,23 +4,27 @@ const gradeSchema = mongoose.Schema({
    
     email:{
         type:String,
-      
+        required:true 
+    },
+    rollno:{
+        type:String,
+        required:true 
     },
     name:{
         type:String,
-      
+        required:true
     },
     grade:{
         type:String,
-       
+        required:true
     },
     branch:{
-       type:String
-       
+       type:String,
+       required:true
     },
     course:{
-       type:String
-      
+       type:String,
+       required:true
     }
 
 })
