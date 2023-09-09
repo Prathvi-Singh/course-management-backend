@@ -6,7 +6,10 @@ const gradeSchema = mongoose.Schema({
         type:String,
         required:true 
     },
-  
+    rollno:{
+        type:String,
+        required:true 
+    },
     name:{
         type:String,
         required:true
