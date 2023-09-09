@@ -30,7 +30,7 @@ export const AddUser=async(req,res)=>{
 
       const hashpassword=await bcrypt.hash(info.password,10);
 
-      const user = new User({email:info.email , name:info.name ,contact:info.contact,branch:info.branch ,designation:info.designation,password:hashpassword});
+      const user = new User({email:info.email ,rollno:info.rollno, name:info.name ,contact:info.contact,branch:info.branch ,designation:info.designation,password:hashpassword});
       await user.save();
       res.status(200).json({message:"Everything is ok"}); 
    }
