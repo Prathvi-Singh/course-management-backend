@@ -1,19 +1,18 @@
 import multer  from 'multer'
 import { GridFsStorage} from 'multer-gridfs-storage'
-// import dotenv from 'dotenv'
+import dotenv from 'dotenv'
 
-// dotenv.config();
+dotenv.config();
+var URL=process.env.URL;
 
 const storage =new GridFsStorage({
-   
-    url:"mongodb+srv://prathvi:onetwothree@cluster0.fscmzlp.mongodb.net/coursemanagement?retryWrites=true&w=majority",
+    url:URL,
     options : {useNewUrlParser : true},
     file : (request,file) => {
       
-        const match = ['image/png','image/jpeg','image/pdf','image/jpg','image/gif','image/avif','image/cpp','image/c','image/py'];
+        const match = ['image/png','image/jpeg','image/pdf','image/jpg','image/gif','image/avif','image/cpp','image/c','image/py','image/xslx'];
        
         if(match.indexOf(file.memeType)===-1){
-           
             return `${Date.now()}-iiitdm-${file.originalname}`
         }
         return {
